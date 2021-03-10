@@ -9,7 +9,6 @@ int Contar_String(char* str){
 }
 
 void Converter_Minusculo(char* str){
-
   int tam = Contar_String(str);
   for(int i = 0; i < tam; i++)
     str[i] = tolower(str[i]);
