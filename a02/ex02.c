@@ -92,16 +92,3 @@ int main(){
 
   return 0;
 }  
-
-
-/*   int resultado = 0;
-  int mult = 1;
-  int auxiliar = 0;
-
-  while(num >= 1){
-    printf("%d\n", resultado);
-    auxiliar = num / mult;
-    resultado += num * mult;
-    num = auxiliar / 10;
-    mult *= 10;
-  } */
