@@ -10,13 +10,13 @@ int Contar_String(char* str){
 void Inverter_String(char* str){
   
   int tamStr = Contar_String(str);
-  char auxiliar[tamStr];
-  auxiliar[tamStr-1] = '\0';
+  char auxiliar[tamStr+1];
+  auxiliar[tamStr] = '\0';
 
   int i, j;
   for(i = tamStr-1, j = 0; i >= 0; i--)
     auxiliar[i] = str[j++];
-  for(i = 0; i < tamStr; i++)
+  for(i = 0; i <= tamStr; i++)
     str[i] = auxiliar[i];
 }
 
