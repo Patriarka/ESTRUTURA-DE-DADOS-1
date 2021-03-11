@@ -30,8 +30,8 @@ int main(){
   int v[] = {1,2,7,4,5};
   int v2[] = {1,-2,-7,4,5};
 
-  printf("Maior: %d\n",Maior_Elemento1(v,-5));
   printf("Maior: %d\n",Maior_Elemento1(v,5));
+  printf("Maior: %d\n",Maior_Elemento1(v,-5));
 
   Maior_Elemento2(v,5,&maior);
   printf("Maior: %d\n", maior);
