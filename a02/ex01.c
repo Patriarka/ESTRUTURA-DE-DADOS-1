@@ -1,9 +1,13 @@
 #include <stdio.h>
 
-float Potencia1(float base, int expoente){
-  if(expoente == 0) return 1;
-  if(expoente >= 1) return base *= Potencia1(base, expoente-1);
-  else return Potencia1(1/base, expoente*(-1));
+float Potencia1(int base, int expoente){
+  int qtdeIteracoes = (expoente >= 0 ? expoente : expoente*(-1));
+
+  int res = 1;
+  for(int i = 0; i < qtdeIteracoes; i++)
+    res *= base;
+
+  return (expoente >= 0 ? res : (float)1/res);
 }
 
 void Potencia2(int base, int expoente, float* res){
