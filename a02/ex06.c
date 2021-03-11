@@ -13,8 +13,12 @@ int Soma_Vetor1(int* v, int qtdeElementos){
 
 void Soma_Vetor2(int* v, int qtdeElementos, int* resultado){
 
-  *resultado = 0;
+  if(qtdeElementos < 0){
+    *resultado = -1;
+    return;
+  }
 
+  *resultado = 0;
   if(!v || qtdeElementos < 0) return;
   for(int i = 0; i < qtdeElementos; i++)
     *resultado += v[i];
