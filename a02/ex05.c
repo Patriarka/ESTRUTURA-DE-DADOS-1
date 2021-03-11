@@ -27,7 +27,7 @@ void Multiplicar_Elementos(int* p, int linhas, int colunas, int mult){
 
 int main(){
 
-  int i, j, m[3][3];
+  int m[3][3];
 
   //captura os elementos
   Capturar_Elementos(*m, 3, 3);
