@@ -10,18 +10,16 @@ void Capturar_Elementos(int* p, int linhas, int colunas){
 }
 
 void Imprimir_Matriz(int* p, int linhas, int colunas){
-  for(int i = 0; i < linhas; i++){
-    for(int j = 0; j < colunas; j++)
-      printf("%d ", *(p+(i*colunas)+j));
-    printf("\n");
+  for(int i = 0; i < linhas*colunas; i++){
+    printf("%d ", p[i]);
+    if(i % colunas == colunas-1) printf("\n");
   }
 }
 
 void Multiplicar_Elementos(int* p, int linhas, int colunas, int mult){
-  for(int i = 0; i < linhas; i++){
-    for(int j = 0; j < colunas; j++){
-      *(p+(i*colunas)+j) *= mult;
-    }
+  for(int i = 0; i < linhas*colunas; i++){
+    p[i] *= mult; 
+    if(i % colunas == colunas-1) printf("\n");
   }
 }
 
