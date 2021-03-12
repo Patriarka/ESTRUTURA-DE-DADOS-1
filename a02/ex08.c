@@ -43,31 +43,13 @@ void Vet_Imprimir(int* v, int qtdeElementos){
 int main(){
 
   int vResultante[9]; 
-  int v1[] = {6,7,8,9,10};
-  int v2[] = {6,7,8,9};
+  int v1[] = {-5,-1,2,3,4};
+  int v2[] = {-3,1,2,4};
 
   int* resultante = Intercalar_Vetores1(v1, 5, v2, 4, vResultante);
   Vet_Imprimir(resultante,9);
 
   Intercalar_Vetores2(v1, 5, v2, 4, vResultante);
-  Vet_Imprimir(vResultante,9);
-
-  int v3[] = {1,2,3,4,5};
-  int v4[] = {1,2,3,4};
-
-  resultante = Intercalar_Vetores1(v3, 5, v4, 4, vResultante);
-  Vet_Imprimir(resultante,9);
-
-  Intercalar_Vetores2(v3, 5, v4, 4, vResultante);
-  Vet_Imprimir(vResultante,9);
-
-  int v5[] = {-5,-1,2,3,4};
-  int v6[] = {-3,1,2,4};
-
-  resultante = Intercalar_Vetores1(v5, 5, v6, 4, vResultante);
-  Vet_Imprimir(resultante,9);
-
-  Intercalar_Vetores2(v5, 5, v6, 4, vResultante);
   Vet_Imprimir(vResultante,9); 
 
   return 0;
