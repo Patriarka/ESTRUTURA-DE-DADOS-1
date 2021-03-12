@@ -19,7 +19,7 @@ void Copia_String(char* str1, char* str2){
 
 int main(){
 
-  char str1[20];
+  char str1[10];
   char str2[] = {'B','u','l','l','s','\0'};
 
   Copia_String(str1, str2);
