@@ -43,7 +43,6 @@ void Vet_Imprimir(int* v, int qtdeElementos){
 int main(){
 
   int vResultante[9]; 
-  int* vResultante2;
   int v1[] = {6,7,8,9,10};
   int v2[] = {6,7,8,9};
 
