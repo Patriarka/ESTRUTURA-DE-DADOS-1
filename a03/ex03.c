@@ -55,8 +55,13 @@ int main(int argc, char *argv[]){
 
   free(v);
   free(v2);
+  free(clone1);
+  free(clone2);
+  
   v2 = NULL;
   v = NULL;
+  clone1 = NULL;
+  clone2 = NULL;
 
   return 0;
 }
