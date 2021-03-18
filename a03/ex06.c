@@ -39,5 +39,8 @@ int main(){
   //Resultado esperado
   // [2,4,6,0,0,0]
 
+  free(v);
+  v = NULL;
+
   return 0;
 }
