@@ -54,6 +54,8 @@ int main(int argc, char *argv[]){
   vet_imprimir(clone2, tam);
 
   free(v);
+  free(v2);
+  v2 = NULL;
   v = NULL;
 
   return 0;
