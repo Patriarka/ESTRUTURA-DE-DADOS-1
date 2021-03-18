@@ -10,23 +10,32 @@ int Contar_String(char* str){
 void Inverter_String(char* str){
   
   int tamStr = Contar_String(str);
-  char auxiliar[tamStr];
+  char auxiliar[tamStr+1];
   auxiliar[tamStr] = '\0';
 
   int i, j;
   for(i = tamStr-1, j = 0; i >= 0; i--)
     auxiliar[i] = str[j++];
-  for(i = 0; i < tamStr; i++)
+  for(i = 0; i <= tamStr; i++)
     str[i] = auxiliar[i];
 }
 
 int main(){
 
-  char str[] = {'U','T','F','P','R','\0'};
+  char str1[] = {'U','T','F','P','R','\0'};
+  char str2[] = {'U','S','P','\0'};
 
-  Inverter_String(str);
+  Inverter_String(str1);
+  printf("%s\n", str1);
 
-  printf("%s\n", str);
+  Inverter_String(str1);
+  printf("%s\n", str1);
+
+  Inverter_String(str2);
+  printf("%s\n", str2);
+
+  Inverter_String(str2);
+  printf("%s\n", str2);
 
   return 0;
 }
