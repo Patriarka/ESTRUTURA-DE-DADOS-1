@@ -16,12 +16,19 @@ void vet_imprimir(int* v, int tam){
 }
 
 void atribuir_crescente(int* v, int tam){
+
+  if(!v) return;
+  if(tam <= 0) return;
+
   for(int i = 0; i < tam; i++){
     v[i] = i+1;
   }
 }
 
 int* clonar_vetorA(int* v, int tam){
+
+  if(!v) return NULL;
+  if(tam <= 0) return NULL;
 
   int* clone = (int*) malloc(tam * sizeof(int));
   memcpy(clone, v, tam * sizeof(int));
@@ -30,6 +37,10 @@ int* clonar_vetorA(int* v, int tam){
 }
 
 void clonar_vetorB(int* v, int tam, int** clone){
+  
+  if(!v) return;
+  if(tam <= 0) return;
+
   *clone = (int*) malloc(tam * sizeof(int));
   for(int i = 0; i < tam; i++)
     (*clone)[i] = v[i];
@@ -57,7 +68,7 @@ int main(int argc, char *argv[]){
   free(v2);
   free(clone1);
   free(clone2);
-  
+
   v2 = NULL;
   v = NULL;
   clone1 = NULL;

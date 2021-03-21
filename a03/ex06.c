@@ -4,7 +4,7 @@
 void vet_imprimir(int* v, int tam){
   
   if(!v) return;
-  if(tam < 0) return;
+  if(tam <= 0) return;
 
   printf("[");
   for(int i = 0; i < tam; i++){
@@ -16,6 +16,7 @@ void vet_imprimir(int* v, int tam){
 
 int vetor_dobraTamanho(int** v, int tam){
 
+  if(tam < 0) return 0;
   int novoTamanho = tam*2;
 
   int* vetor_dobro = (int*) calloc(novoTamanho, sizeof(int));

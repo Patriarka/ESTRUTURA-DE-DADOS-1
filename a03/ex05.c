@@ -15,6 +15,10 @@ void vet_imprimir(int* v, int tam){
 }
 
 void vetor_incrementa(int* v, int tam){
+
+  if(!v) return;
+  if(tam <= 0) return;
+
   for(int i = 0; i < tam; i++){
     v[i] += 1;
   }
