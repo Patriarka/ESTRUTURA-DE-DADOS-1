@@ -46,9 +46,9 @@ void clonar_vetorB(int* v, int tam, int** clone){
     (*clone)[i] = v[i];
 }
 
-int main(int argc, char *argv[]){
+int main(){
 
-  int tam = atoi(argv[1]);
+  int tam = 10;
   
   int* v = (int*) malloc(tam * sizeof(int));
   int* v2 = (int*) malloc(tam * sizeof(int));

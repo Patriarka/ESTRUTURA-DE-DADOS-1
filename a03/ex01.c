@@ -14,9 +14,9 @@ void vet_imprimir(int* v, int tam){
   printf("]\n");
 }
 
-int main(int argc, char *argv[]){
+int main(){
 
-  int tam = atoi(argv[1]);
+  int tam = 5;
 
   int* v = (int*) malloc(tam * sizeof(int));
 

@@ -32,10 +32,10 @@ int* vetor_aleatorio(int tam_vetor){
 int main(){
 
   int *v1 = vetor_aleatorio(10);
-  int *v2 = vetor_aleatorio(100);
+  int *v2 = vetor_aleatorio(20);
 
   vet_imprimir(v1, 10);
-  vet_imprimir(v2, 100);
+  vet_imprimir(v2, 20);
 
   free(v1);
   free(v2);

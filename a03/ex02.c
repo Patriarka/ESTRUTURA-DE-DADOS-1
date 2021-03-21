@@ -34,10 +34,10 @@ void vetor_novoB(int tam, int valor, int** v){
     (*v)[i] = valor;
 }
 
-int main(int argc, char *argv[]){
+int main(){
 
-  int tam1 = atoi(argv[1]);
-  int tam2 = atoi(argv[2]);
+  int tam1 = 6;
+  int tam2 = 10;
 
   int *v1, *v2;
   v1 = vetor_novoA(tam1, -1);
@@ -45,6 +45,18 @@ int main(int argc, char *argv[]){
 
   vet_imprimir(v1,tam1);
   vet_imprimir(v2,tam2);
+
+  v1 = vetor_novoA(-tam1, -1);
+  vetor_novoB(-tam2, 0, &v2);
+
+  vet_imprimir(v1,-tam1);
+  vet_imprimir(v2,-tam2);
+
+  v1 = vetor_novoA(0, -1);
+  vetor_novoB(0, 0, &v2);
+
+  vet_imprimir(v1,-tam1);
+  vet_imprimir(v2,-tam2);
 
   free(v1);
   free(v2);

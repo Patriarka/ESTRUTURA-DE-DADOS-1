@@ -42,7 +42,7 @@ void imprimir_aluno(Aluno* a){
   printf("%d,", a->codigo);
   printf("%s,", a->nome);
   printf("%d,", a->qtdeNotas);
-  
+
   printf("[");
   for(int i = 0; i < a->qtdeNotas; i++){
     printf("%.2f", a->notas[i]);
@@ -57,9 +57,9 @@ int main(){
 
   Aluno* a1, *a2;
 
-  float* v_notas;
+  float* v_notas, *v_notas2;
+
   int qtdeNotas1 = 3;
-  float* v_notas2;
   int qtdeNotas2 = 5;
 
   v_notas = gerar_notas(qtdeNotas1);
