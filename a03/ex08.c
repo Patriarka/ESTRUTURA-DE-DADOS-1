@@ -25,8 +25,9 @@ float* gerar_notas(int qtdeNotas){
   return vetor_notas;
 }
 
-Aluno* criar_aluno(){
+Aluno* criar_aluno(int qtdeNotas){
   Aluno* novo_aluno = (Aluno*) malloc(sizeof(Aluno));
+  novo_aluno->notas = gerar_notas(qtdeNotas);
   return novo_aluno;
 }
 
@@ -57,25 +58,15 @@ int main(){
 
   Aluno* a1, *a2;
 
-  float* v_notas, *v_notas2;
-
-  int qtdeNotas1 = 3;
-  int qtdeNotas2 = 5;
-
-  v_notas = gerar_notas(qtdeNotas1);
-  v_notas2 = gerar_notas(qtdeNotas2);
-
-  a1 = criar_aluno();
+  a1 = criar_aluno(3);
   a1->codigo = 1;
   strcpy(a1->nome,"Alexander Hamilton");
-  a1->notas = v_notas;
-  a1->qtdeNotas = qtdeNotas1;
+  a1->qtdeNotas = 3;
 
-  a2 = criar_aluno();
+  a2 = criar_aluno(5);
   a2->codigo = 2;
   strcpy(a2->nome,"Mary Poppins");
-  a2->notas = v_notas2;
-  a2->qtdeNotas = qtdeNotas2;
+  a2->qtdeNotas = 5;
 
   imprimir_aluno(a1); 
   imprimir_aluno(a2); 
