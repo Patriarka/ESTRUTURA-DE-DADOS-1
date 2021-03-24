@@ -32,8 +32,9 @@ Aluno* criar_aluno(int qtdeNotas){
 }
 
 void aluno_destruir(Aluno* a){
-  free(a);
   free(a->notas);
+  a->notas = NULL;
+  free(a);
   a = NULL;
 }
 
