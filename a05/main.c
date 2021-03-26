@@ -3,7 +3,7 @@
 #include "tad_timer.h"
 
 int main(){
-	Timer* t1 = timer_criar();
+    Timer* t1 = timer_criar();
     
 	/**
     * Medir o tempo de execução de um trecho de código que realiza
