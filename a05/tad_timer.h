@@ -1,5 +1,5 @@
-#ifndef _TAD_TIMER1_H_
-#define _TAD_TIMER1_H_
+#ifndef _TAD_TIMER_H_
+#define _TAD_TIMER_H_
 
 #include <stdio.h>
 #include <stdlib.h>
