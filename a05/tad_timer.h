@@ -11,6 +11,7 @@
 typedef struct timer{
   double tempoInicial;
   double tempoFinal;
+  double tempoGasto;
 } Timer;
 
 /*******************************************************************

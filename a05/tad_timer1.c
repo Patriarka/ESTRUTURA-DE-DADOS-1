@@ -32,5 +32,6 @@ void timer_reset(Timer* t){
 }
 
 float timer_resultado(Timer* t){
-  return t->tempoFinal - t->tempoInicial;
+  t->tempoGasto = t->tempoFinal - t->tempoInicial;
+  return t->tempoGasto;
 }

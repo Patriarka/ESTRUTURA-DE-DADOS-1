@@ -15,14 +15,16 @@ void timer_start(Timer* t){
 }
 
 void timer_stop(Timer* t){
-  t->tempoFinal = = clock();
+  t->tempoFinal = clock();
 }
 
 void timer_reset(Timer* t){
   t->tempoInicial = 0;
   t->tempoFinal = 0;
+  t->tempoGasto = 0;
 }
 
 float timer_resultado(Timer* t){
-  return (float)(t->tempoFinal - t->tempoInicial)/CLOCKS_PER_SEC;
+  t->tempoGasto = (float)(t->tempoFinal - t->tempoInicial)/CLOCKS_PER_SEC;
+  return t->tempoGasto;
 }
