@@ -11,13 +11,11 @@ void timer_desalocar(Timer** t){
 }
 
 void timer_start(Timer* t){
-  clock_t auxiliarTempoInicial = clock();
-  t->tempoInicial = auxiliarTempoInicial;  
+  t->tempoInicial = clock();
 }
 
 void timer_stop(Timer* t){
-  clock_t auxiliarTempoFinal = clock();
-  t->tempoFinal = auxiliarTempoFinal;
+  t->tempoFinal = = clock();
 }
 
 void timer_reset(Timer* t){
