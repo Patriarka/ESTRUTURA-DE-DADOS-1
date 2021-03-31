@@ -1,5 +1,10 @@
 #include "tad_timer.h"
 
+typedef struct timer{
+  double tempoInicial;
+  double tempoFinal;
+} Timer;
+
 Timer* timer_criar(){
   Timer* novo_timer = (Timer*) malloc(sizeof(Timer));
   return novo_timer;
@@ -32,6 +37,5 @@ void timer_reset(Timer* t){
 }
 
 float timer_resultado(Timer* t){
-  t->tempoGasto = t->tempoFinal - t->tempoInicial;
-  return t->tempoGasto;
+  return t->tempoFinal - t->tempoInicial;
 }

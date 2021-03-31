@@ -8,11 +8,7 @@
 /*******************************************************************
 *  DADOS
 *******************************************************************/
-typedef struct timer{
-  double tempoInicial;
-  double tempoFinal;
-  double tempoGasto;
-} Timer;
+typedef struct timer Timer;
 
 /*******************************************************************
 *  OPERACOES
