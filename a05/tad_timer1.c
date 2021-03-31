@@ -1,8 +1,8 @@
 #include "tad_timer.h"
 
 typedef struct timer{
-  double tempoInicial;
-  double tempoFinal;
+  time_t tempoInicial;
+  time_t tempoFinal;
 } Timer;
 
 Timer* timer_criar(){
@@ -16,19 +16,11 @@ void timer_desalocar(Timer** t){
 }
 
 void timer_start(Timer* t){
-  
-  time_t auxiliarTempoInicial;
-
-  time(&auxiliarTempoInicial);
-  t->tempoInicial = auxiliarTempoInicial;  
+  time(&t->tempoInicial);
 }
 
 void timer_stop(Timer* t){
-
-  time_t auxiliarTempoFinal;
-
-  time(&auxiliarTempoFinal);
-  t->tempoFinal = auxiliarTempoFinal;
+  time(&t->tempoFinal);
 }
 
 void timer_reset(Timer* t){
