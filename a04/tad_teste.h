@@ -10,12 +10,7 @@ typedef enum {false, true} Boolean;
 /*******************************************************************
 *   DADOS
 *******************************************************************/
-typedef struct teste{ 
-  char* nomeTeste;
-  int qtdeTestes;
-  int qtdeAcertos;
-  int qtdeErros;
-} Teste;
+typedef struct teste Teste;
 
 /*******************************************************************
 *   OPERACOES
