@@ -82,13 +82,10 @@ void mat_imprimir(Matriz* mat){
   }
 }
 
-
-
-
-
 int mat_vetLinha(Matriz* mat, int linha, float* vetor){
 
   if(!mat) return false;
+  if(linha >= mat->qtdeLinhas || linha < 0) return -1;
   
   for(int j = 0; j < mat->qtdeColunas; j++){
     vetor[j] = mat->m[linha][j];
@@ -100,6 +97,7 @@ int mat_vetLinha(Matriz* mat, int linha, float* vetor){
 int mat_vetColuna(Matriz* mat, int coluna, float* vetor){
   
   if(!mat) return false;
+  if(coluna >= mat->qtdeLinhas || coluna < 0) return -1;
   
   for(int i = 0; i < mat->qtdeLinhas; i++){
     vetor[i] = mat->m[i][coluna];
@@ -115,12 +113,13 @@ bool mat_posicao(Matriz* mat, float elemento, int* endLinha, int* endColuna){
   for(int i = 0; i < mat->qtdeLinhas; i++){
     for(int j = 0; j < mat->qtdeColunas; j++){
       if(elemento == mat->m[i][j]){
-        // endLinha = 
-        // endColuna = 
+        *endLinha = i;
+        *endColuna = j;
+        return true;
       }
     }
   }
 
-  return true;
+  return false;
 }
 
