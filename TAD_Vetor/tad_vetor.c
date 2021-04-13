@@ -174,13 +174,9 @@ int vet_imprimir(Vetor* v){
 }
 
 void vet_desalocar(Vetor* v){
-
   if(!v) return;
-
   free(v->vetor);
-  v->vetor = NULL;
   free(v);
-  v = NULL;
 }
 
 bool vet_toString(Vetor* v, char* enderecoString){
