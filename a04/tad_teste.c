@@ -44,7 +44,6 @@ void teste_relatorio(Teste* t){
 void teste_desalocar(Teste** t){
 
   free((*t)->nomeTeste);
-  (*t)->nomeTeste = NULL;
   free(*t);
   *t = NULL;
 }
