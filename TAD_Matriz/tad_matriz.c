@@ -29,10 +29,7 @@ void mat_desalocar(Matriz** endMat){
   for(int i = 0; i < (*endMat)->qtdeLinhas; i++){
     free((*endMat)->m[i]);
   }
-
   free((*endMat)->m);
-  (*endMat)->m = NULL;
-  
   free(*endMat);
   *endMat = NULL;
 }
