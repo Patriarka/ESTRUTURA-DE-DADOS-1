@@ -64,6 +64,7 @@ int main(){
   teste_verificar(t1, strcmp(str,"[3,2,1,20]") == 0, "verificar vetor"); 
 
   vet_desalocar(vet);
+  vet = NULL;
 
   teste_relatorio(t1);
   teste_desalocar(&t1);
