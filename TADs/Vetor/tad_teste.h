@@ -1,21 +1,14 @@
 #ifndef _TAD_TESTE_H_
 #define _TAD_TESTE_H_
 
-#include <stdio.h> 
+#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
-typedef enum {false, true} Boolean;
 
 /*******************************************************************
 *   DADOS
 *******************************************************************/
-typedef struct teste{ 
-  char* nomeTeste;
-  int qtdeTestes;
-  int qtdeAcertos;
-  int qtdeErros;
-} Teste;
+typedef struct teste Teste;
 
 /*******************************************************************
 *   OPERACOES

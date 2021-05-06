@@ -1,5 +1,12 @@
 #include "tad_teste.h"
 
+typedef struct teste{ 
+  char* nomeTeste;
+  int qtdeTestes;
+  int qtdeAcertos;
+  int qtdeErros;
+} Teste;
+
 Teste* teste_criar(char* descricao){
 
   Teste* novo_teste = (Teste*) malloc(sizeof(Teste));

@@ -1,0 +1,8 @@
+{
+  "files.associations": {
+    "tad_matriz.h": "c",
+    "stdio.h": "c",
+    "stdlib.h": "c",
+    "tad_teste.h": "c"
+  }
+}

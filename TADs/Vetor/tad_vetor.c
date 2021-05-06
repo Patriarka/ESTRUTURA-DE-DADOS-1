@@ -1,10 +1,10 @@
 #include "tad_vetor.h"
 
-typedef struct vetor{
+struct vetor{
   int* vetor;
   int tamVetor;
   int qtdeElementos;
-} Vetor;
+};
 
 static void aumentar_vetor(Vetor* v){
 
@@ -33,6 +33,7 @@ Vetor* vet_criar(int tam){
   if(tam <= 0) return NULL;  
 
   Vetor* novoVetor = (Vetor*) malloc(sizeof(Vetor));
+
   novoVetor->vetor = (int*) calloc(tam,sizeof(int));
 
   novoVetor->tamVetor = tam;
@@ -187,28 +188,22 @@ bool vet_toString(Vetor* v, char* enderecoString){
   if(!v) return false;
   if(v->qtdeElementos <= 0) return false;
     
-  int pos = 0;
-  int tam = (v->qtdeElementos*2)+1; 
-  char temp[tam+1];
-  enderecoString[pos++] = '[';
-  
+  int posicao = 0;
+  int tamVetorStr = (v->qtdeElementos*2)+1; 
+  char strAuxiliar[tamVetorStr+1];
+
+  enderecoString[posicao++] = '[';
   for(int i = 0; i < v->qtdeElementos; i++){
-      int j = 0;
-      sprintf(&temp[j], "%d", v->vetor[i]);
-      while(temp[j] != '\0'){
-          enderecoString[pos++] = temp[j];
-          j++;
-      }
-      if(i < v->qtdeElementos-1)enderecoString[pos++] = ',';
+    int j = 0;
+    sprintf(&strAuxiliar[j], "%d", v->vetor[i]);
+    while(strAuxiliar[j] != '\0'){
+      enderecoString[posicao++] = strAuxiliar[j];
+      j++;
+    }
+    if(i != v->qtdeElementos-1) enderecoString[posicao++] = ',';
   }
-  enderecoString[pos++] = ']';
-  enderecoString[pos] = '\0';
+  enderecoString[posicao++] = ']';
+  enderecoString[posicao] = '\0';
   
   return true;
 } 
-
-
-
-
-
-

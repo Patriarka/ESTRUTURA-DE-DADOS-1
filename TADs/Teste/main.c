@@ -4,7 +4,7 @@
 int main(){
 
     Teste* t1 = teste_criar("Testes para vericar operadores relacionais");
-    teste_verificar(t1, 1==1, "Teste para expressao 1==1");
+    teste_verificar(t1, 1!=1, "Teste para expressao 1!=1");
     teste_verificar(t1, 20>20 == 0, "20>20 == 0");
     teste_verificar(t1, 5<=5, "5<=5");
 

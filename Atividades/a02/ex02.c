@@ -73,7 +73,7 @@ int main(){
   printf("%d\n", Ordem_Inversa1(333));
   printf("%d\n", Ordem_Inversa1(1234)); 
   printf("%d\n", Ordem_Inversa1(99999)); 
-  printf("%d\n", Ordem_Inversa1(999399)); 
+  printf("%d\n", Ordem_Inversa1(999999)); 
 
   Ordem_Inversa2(123, &inverso);
   printf("%d\n", inverso);
@@ -87,7 +87,7 @@ int main(){
   printf("%d\n", inverso);
   Ordem_Inversa2(99999, &inverso); 
   printf("%d\n", inverso);
-  Ordem_Inversa2(999399, &inverso);
+  Ordem_Inversa2(999999, &inverso);
   printf("%d\n", inverso); 
 
   return 0;
