@@ -63,7 +63,6 @@ void lista_destruir(Lista **endLista)
 	if (!lista_ehValida(*endLista))
 		return;
 
-	lista_ehValida(*endLista);
 	no_destruir((*endLista)->inicio);
 	free(*endLista);
 	*endLista = NULL;
@@ -161,14 +160,14 @@ int lista_removerElemento(Lista *l, TipoElemento elemento)
 {
 	if (!lista_ehValida(l))
 		return -1;
-	if (!lista_contem)
+	if (!lista_contem(l,elemento))
 		return -1;
 
 	int posicao = lista_posicao(l,elemento);
 	if (posicao == -1) return -1;
 	
 	TipoElemento removido;
-	if(!lista_removerPosicao(l,posicao,&removido))
+	if (!lista_removerPosicao(l,posicao,&removido))
 		return -1;
 
 	return posicao;
@@ -260,8 +259,6 @@ bool lista_toString(Lista *l, char *str)
 {
 	if (!lista_ehValida(l))
 		return false;
-
-	str[0] = '\0';
 
 	int posicao = 0;
 	No *no_aux = l->inicio;
