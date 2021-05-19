@@ -177,8 +177,7 @@ bool pilha_empilharTodos(Pilha *p, TipoElemento *vetor, int tamVetor)
 {
   if(!pilha_ehValida(p)) 
     return false; 
-  if (!vetor)
-    return false;
+
   for (int i = 0; i < tamVetor; i++)
     pilha_empilhar(p, vetor[i]);
 
