@@ -26,6 +26,12 @@ Pilha *pilha_criar()
   novaPilha->topo = NULL;
 }
 
+static bool pilha_ehValida(Pilha* p)
+{ 
+  if(p == NULL) return false;
+  else return true;
+}
+
 static void no_destruir(No *no_base)
 {
   if (no_base == NULL)
@@ -36,6 +42,7 @@ static void no_destruir(No *no_base)
 
 void pilha_destruir(Pilha **endereco)
 {
+  if(!pilha_ehValida(*endereco)) return;
   no_destruir((*endereco)->topo);
   free(*endereco);
   *endereco = NULL;
@@ -52,17 +59,14 @@ static No *no_criar(TipoElemento dado)
 
 bool pilha_empilhar(Pilha *p, TipoElemento elemento)
 {
-
-  if (!p)
-    return false;
+  if(!pilha_ehValida(p)) 
+    return false; 
 
   No *novoNo = no_criar(elemento);
-
   if (p->qtdeElementos > 0)
     novoNo->prox = p->topo;
 
   p->topo = novoNo;
-
   p->qtdeElementos++;
 
   return true;
@@ -70,11 +74,13 @@ bool pilha_empilhar(Pilha *p, TipoElemento elemento)
 
 bool pilha_desempilhar(Pilha *p, TipoElemento *saida)
 {
+  if(!pilha_ehValida(p)) 
+    return false;
   if (pilha_vazia(p) == true)
     return false;
 
   *saida = p->topo->dado;
-  if(p->qtdeElementos > 1){
+  if (p->qtdeElementos > 1) {
     No* aux = p->topo->prox;
     free(p->topo);
     p->topo = aux;
@@ -90,8 +96,8 @@ bool pilha_desempilhar(Pilha *p, TipoElemento *saida)
 
 bool pilha_topo(Pilha *p, TipoElemento *saida)
 {
-  if (!p)
-    return false;
+  if(!pilha_ehValida(p)) 
+    return false; 
   *saida = p->topo->dado;
 
   return true;
@@ -99,6 +105,8 @@ bool pilha_topo(Pilha *p, TipoElemento *saida)
 
 bool pilha_vazia(Pilha *p)
 {
+  if(!pilha_ehValida(p)) 
+    return false; 
   if (p->qtdeElementos == 0)
     return true;
   else
@@ -107,12 +115,14 @@ bool pilha_vazia(Pilha *p)
 
 void pilha_imprimir(Pilha *p)
 {
+  if(!pilha_ehValida(p)) 
+    return; 
   No *aux = p->topo;
 
   printf("[");
   while (aux != NULL)
   {
-    printf("%d", aux->dado);
+    printf(FORMATO, aux->dado);
     if (aux->prox != NULL)
       printf(",");
 
@@ -123,26 +133,32 @@ void pilha_imprimir(Pilha *p)
 
 int pilha_tamanho(Pilha *p)
 {
+  if(!pilha_ehValida(p)) 
+    return false; 
   return p->qtdeElementos;
 }
 
 Pilha *pilha_clone(Pilha *p)
 {
+  if(!pilha_ehValida(p)) 
+    return false; 
+  
   Pilha *clone = pilha_criar();
-  pilha_inverter(p);
   No* aux = p->topo;
   while(aux != NULL){
     pilha_empilhar(clone,aux->dado);
     aux = aux->prox;
   }
-  clone->qtdeElementos = p->qtdeElementos;
-  pilha_inverter(p);
+  pilha_inverter(clone);
 
   return clone;
 }
 
 void pilha_inverter(Pilha *p)
 {
+  if(!pilha_ehValida(p)) 
+    return; 
+
   TipoElemento saida;
   int tamVetor = p->qtdeElementos;
   TipoElemento vetor[tamVetor];
@@ -159,8 +175,8 @@ void pilha_inverter(Pilha *p)
 
 bool pilha_empilharTodos(Pilha *p, TipoElemento *vetor, int tamVetor)
 {
-  if (!p)
-    return false;
+  if(!pilha_ehValida(p)) 
+    return false; 
   if (!vetor)
     return false;
   for (int i = 0; i < tamVetor; i++)
@@ -171,26 +187,20 @@ bool pilha_empilharTodos(Pilha *p, TipoElemento *vetor, int tamVetor)
 
 bool pilha_toString(Pilha *f, char *str)
 {
-  if (!f)
-    return false;
+  if(!pilha_ehValida(f)) 
+    return false; 
 
-  int j;
   int posicao = 0;
-  char strAux[20];
-
   str[posicao++] = '[';
 
   No *aux = f->topo;
   while (aux != NULL)
   {
-    j = 0;
-
-    sprintf(&strAux[j], "%d", aux->dado);
-
-    while (strAux[j] != '\0')
-      str[posicao++] = strAux[j++];
+    sprintf(&str[posicao], FORMATO, aux->dado);
+    posicao = strlen(str);
     if (aux->prox != NULL)
       str[posicao++] = ',';
+
     aux = aux->prox;
   }
   str[posicao++] = ']';

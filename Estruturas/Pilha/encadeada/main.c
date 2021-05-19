@@ -16,6 +16,7 @@ int main()
   teste_verificar(t, pilha_empilhar(p, 5) == true, "teste pilha_empilhar 1/4"); 
   teste_verificar(t, pilha_empilhar(p, 10) == true, "teste pilha_empilhar 2/4");
   teste_verificar(t, pilha_empilhar(p, 15) == true, "teste pilha_empilhar 3/4");
+  teste_verificar(t, pilha_empilhar(NULL, 15) == false, "teste pilha_empilhar 13123123/4");
   pilha_imprimir(p); // [15,10,5]
 
   teste_verificar(t, pilha_toString(p, str) == true, "teste pilha_toString 1/2");
@@ -62,7 +63,7 @@ int main()
 
   teste_verificar(t, pilha_desempilhar(p,&saida) == false, "teste pilha_desempilhar 1/1");
 
-  teste_verificar(t, pilha_vazia(p) == true, "teste pilha_vazia 2/2"); // [5]
+  teste_verificar(t, pilha_vazia(p) == true, "teste pilha_vazia 2/2"); // [5] 
 
   pilha_destruir(&p);
   pilha_destruir(&clone);

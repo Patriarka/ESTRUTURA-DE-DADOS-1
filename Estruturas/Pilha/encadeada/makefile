@@ -1,6 +1,10 @@
 encadeada:
-	gcc -c pilha_encadeada.c -o pilha_encadeada.o
-	gcc main.c pilha_encadeada.o -o main
+	gcc -c pilha.c -o pilha.o
+	gcc main.c pilha.o -o main
+
+run:
 	./main
+
+clean:
 	rm *.o
 	rm main
